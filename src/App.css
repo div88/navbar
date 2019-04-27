@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-size: 20px;
 }
 
 .App-logo {
@@ -21,6 +23,75 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.navBar {
+  
+  display: flex;
+  align-items: center;
+  margin-top: 210px;
+  justify-content: center;
+ 
+ /* background-color: #ee3524;*/
+}
+
+.navBar ul{
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   border-bottom: 1px solid #ccc;
+}
+
+.listItem {
+  /*border: 1px solid green;*/
+}
+ 
+.navBar li {
+  color: #ccc;
+  list-style: none;
+  padding: 0px 10px;
+  margin-right: 71px;
+}
+
+.navBar ul li a {
+  text-decoration: none;
+  display: inline-block;  
+  padding: 10px;
+  color: #ccc;
+  transition: color 0.5s;
+}
+
+.navBar ul li .underline {
+  height: 3px;
+  background-color: transparent;
+  width: 0%;
+  transition: width 0.2s, background-color 0.5s;
+  margin: 0 auto;
+}
+
+.navBar ul li.active-link .underline {
+  width: 100%;
+  background-color: #000;
+}
+
+.navBar ul li:hover a {
+  color: #4F79A0;
+}
+
+.navBar ul li.active-link a,
+.navBar ul li.active-link a:hover {
+  color: #000;
+}
+
+.navBarul li:active a {
+  transition: none;
+  color: rgba(255,255,255,0.76);
+}
+
+.navBar ul li:active .underline {
+  transition: width 0.2s;
+  background-color: rgba(255,255,255,0.76);
 }
 
 @keyframes App-logo-spin {
