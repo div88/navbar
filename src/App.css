@@ -51,7 +51,7 @@
   color: #ccc;
   list-style: none;
   padding: 0px 10px;
-  margin-right: 71px;
+  /*margin-right: 71px;*/
 }
 
 .navBar ul li a {
@@ -66,8 +66,10 @@
   height: 3px;
   background-color: transparent;
   width: 0%;
-  transition: width 0.2s, background-color 0.5s;
+  transition: width 0.2s ease-in-out, background-color 0.005s;
   margin: 0 auto;
+  animation-duration: 3s;
+  animation-name: slidein;
 }
 
 .navBar ul li.active-link .underline {
