@@ -4,35 +4,11 @@
   font-size: 20px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 .navBar {
-  
   display: flex;
   align-items: center;
   margin-top: 210px;
   justify-content: center;
- 
- /* background-color: #ee3524;*/
 }
 
 .navBar ul{
@@ -42,34 +18,24 @@
   justify-content: center;
    border-bottom: 1px solid #ccc;
 }
-
-.listItem {
-  /*border: 1px solid green;*/
-}
  
 .navBar li {
   color: #ccc;
   list-style: none;
   padding: 0px 10px;
-  /*margin-right: 71px;*/
 }
 
 .navBar ul li a {
   text-decoration: none;
   display: inline-block;  
-  padding: 10px;
+  padding: 10px 10px 11px 10px;
   color: #ccc;
   transition: color 0.5s;
 }
 
-.navBar ul li .underline {
-  height: 3px;
-  background-color: transparent;
-  width: 0%;
-  transition: width 0.2s ease-in-out, background-color 0.005s;
-  margin: 0 auto;
-  animation-duration: 3s;
-  animation-name: slidein;
+.underline {
+  position: absolute;
+  border-bottom: 2px solid transparent;
 }
 
 .navBar ul li.active-link .underline {
@@ -78,7 +44,7 @@
 }
 
 .navBar ul li:hover a {
-  color: #4F79A0;
+  color: #0070c9;
 }
 
 .navBar ul li.active-link a,
@@ -91,9 +57,9 @@
   color: rgba(255,255,255,0.76);
 }
 
-.navBar ul li:active .underline {
-  transition: width 0.2s;
-  background-color: rgba(255,255,255,0.76);
+.navBar a,
+.underline {
+  transition: all .35s ease-in-out;
 }
 
 @keyframes App-logo-spin {

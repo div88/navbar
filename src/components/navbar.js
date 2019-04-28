@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import nav from '../navigation.json'
 import moment from 'moment';
 import 'moment-timezone';
-import axios from 'axios';
 import CityDetail from './cityDetail.js'
-
 
 class Navbar extends Component {
 	constructor(props) {
@@ -27,19 +25,47 @@ class Navbar extends Component {
 		 		cityName: city
 		 	})
 		}
-
 	}
 
+	addSlidingIndicator(e) {
+		const el = e.target;
+		const target = document.querySelector(".underline");
+	  	const links = document.querySelectorAll(".navBar a");
+
+		if (!el.parentNode.classList.contains("active-link")) {
+	      for (let i = 0; i < links.length; i++) {
+	        if (links[i].parentNode.classList.contains("active-link")) {
+	          links[i].parentNode.classList.remove("active-link");
+	        }
+	      }
+
+	      el.parentNode.classList.add("active-link");
+
+	      const width = el.getBoundingClientRect().width;
+	      const height = el.getBoundingClientRect().height;
+	      const left = el.getBoundingClientRect().left + window.pageXOffset;
+	      const top = el.getBoundingClientRect().top + window.pageYOffset;
+
+	      target.style.width = `${width}px`;
+	      target.style.height = `${height}px`;
+	      target.style.left = `${left}px`;
+	      target.style.top = `${top}px`;
+	      target.style.borderColor = '#000';
+	      target.style.transform = "none";
+	    }
+	}
+
+
 	clickEvent = (el, city) => {
-		let cityTime = this.getTime(city);
-		
 		if(city.label) {
 			this.setState({
 				activeLink: true,
 				activeCity: city.section,
 				show: true
 			})
+			this.getTime(city);
 		}	
+		this.addSlidingIndicator(el);
 	}
 	
 	render() {
@@ -52,11 +78,12 @@ class Navbar extends Component {
 					<ul id="navList">
 					{nav.cities.map((city, index) => (
 						<li key={city.section} className={city.section === selectedCity ? activeLinkClass : ''}>
-							<a href="#" onClick={() => this.clickEvent(this,city)}>{city.label}</a>
-							<div className="underline"></div>
+							<a href="#" onClick={(e) => this.clickEvent(e,city)}>{city.label}</a>
 						</li>
 					))}
 					</ul>
+
+					<span className="underline"></span>
 
 					
 				</div>
