@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 import nav from '../navigation.json'
 import moment from 'moment';
 import 'moment-timezone';
-import axios from 'axios';
-
-
-// AIzaSyBUTZmWsF6PAlIgjYY_Xgz1t9EJEbHPHLY
-// AIzaSyBhrchFPXDF9-OWWA-igwUnwWLc4MZKTo4
-// AIzaSyDgddaqUTaWu-SB9qKoLxt0Mk0cx7IC9n8
 
 class CityDetail extends Component {
 	constructor(props) {

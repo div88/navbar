@@ -6,10 +6,6 @@ import axios from 'axios';
 import CityDetail from './cityDetail.js'
 
 
-// AIzaSyBUTZmWsF6PAlIgjYY_Xgz1t9EJEbHPHLY
-// AIzaSyBhrchFPXDF9-OWWA-igwUnwWLc4MZKTo4
-// AIzaSyDgddaqUTaWu-SB9qKoLxt0Mk0cx7IC9n8
-
 class Navbar extends Component {
 	constructor(props) {
 		super(props);
@@ -25,23 +21,11 @@ class Navbar extends Component {
 	}
 
 	getTime = (city) => {
-		// const apiK = 'AIzaSyCP_zM2YDc8JgOkXCAf9qwbeGvMl00064k';
-		// let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${city.label}&key=${apiK}`;
-		// let lat;
-		// let long;
 		if(city) {
 		 	this.setState({
 		 		timeI: moment.tz(`${city.timeZ}`).format('HH:mm:ss'),
 		 		cityName: city
 		 	})
-		 // 	axios.get(url).then(response => {
-	 	// 		lat = response ? response.data.results[0].geometry.location.lat : '';
-		 // 		long = response ? response.data.results[0].geometry.location.lat : '';
-			//     console.log(lat);	
-		 		
-			//    console.log(response.data.results[0].geometry);
-			// });
-
 		}
 
 	}
